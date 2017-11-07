@@ -6,7 +6,6 @@
 package employee.main;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  *
@@ -20,54 +19,22 @@ public class Employee implements Serializable{
     private String lastName;
     private String password;
     private int authLevel;
-    private double totalHours;
-    private double regHours;
-    private double overHours;
     private String status;
     private double payRate;
     
-    // Date Variables
-    private Date monIn;
-    private Date monOut;
-    private Date tuesIn;
-    private Date tuesOut;
-    private Date wedIn;
-    private Date wedOut;
-    private Date thurIn;
-    private Date thurOut;
-    private Date friIn;
-    private Date friOut;
-    
-    public Employee(){
-        
-    }
+    public Employee(){}
     
     public Employee(int employeeID, String firstName, String lastName, 
-                    String password, int authLevel, double totalHours, 
-                    double regHours, double overHours, String status, 
-                    double payRate, Date monIn, Date monOut, Date tuesIn,
-                    Date tuesOut, Date wedIn, Date wedOut, Date thurIn, 
-                    Date thurOut, Date friIn, Date friOut){
+                    String password, int authLevel, String status, 
+                    double payRate){
         
         this.employeeID = employeeID;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.password = password;
         this.authLevel = authLevel;
-        this.totalHours = totalHours;
-        this.regHours = regHours;
-        this.overHours = overHours;
         this.status = status;
         this.payRate = payRate;
-        this.monIn = monIn;
-        this.monOut = monOut;
-        this.tuesIn = tuesIn;
-        this.tuesOut = tuesOut;
-        this.wedIn = wedIn;
-        this.wedOut = wedOut;
-        this.thurIn = thurIn;
-        this.thurOut = thurOut;
-        this.friIn = friIn;
-        this.friOut = friOut;
     }
 
     /**
@@ -141,48 +108,6 @@ public class Employee implements Serializable{
     }
 
     /**
-     * @return the totalHours
-     */
-    public double getTotalHours() {
-        return totalHours;
-    }
-
-    /**
-     * @param totalHours the totalHours to set
-     */
-    public void setTotalHours(double totalHours) {
-        this.totalHours = totalHours;
-    }
-
-    /**
-     * @return the regHours
-     */
-    public double getRegHours() {
-        return regHours;
-    }
-
-    /**
-     * @param regHours the regHours to set
-     */
-    public void setRegHours(double regHours) {
-        this.regHours = regHours;
-    }
-
-    /**
-     * @return the overHours
-     */
-    public double getOverHours() {
-        return overHours;
-    }
-
-    /**
-     * @param overHours the overHours to set
-     */
-    public void setOverHours(double overHours) {
-        this.overHours = overHours;
-    }
-
-    /**
      * @return the status
      */
     public String getStatus() {
@@ -210,149 +135,4 @@ public class Employee implements Serializable{
         this.payRate = payRate;
     }
 
-    
-    /*  ACCESSOR + MUTATOR METHODS FOR TIME STAMPS
-    *
-    */
-    /**
-     * @return the monIn
-     */
-    public Date getMonIn() {
-        return monIn;
-    }
-
-    /**
-     * @param monIn the monIn to set
-     */
-    public void setMonIn(Date monIn) {
-        this.monIn = monIn;
-    }
-
-    /**
-     * @return the monOut
-     */
-    public Date getMonOut() {
-        return monOut;
-    }
-
-    /**
-     * @param monOut the monOut to set
-     */
-    public void setMonOut(Date monOut) {
-        this.monOut = monOut;
-    }
-
-    /**
-     * @return the tuesIn
-     */
-    public Date getTuesIn() {
-        return tuesIn;
-    }
-
-    /**
-     * @param tuesIn the tuesIn to set
-     */
-    public void setTuesIn(Date tuesIn) {
-        this.tuesIn = tuesIn;
-    }
-
-    /**
-     * @return the tuesOut
-     */
-    public Date getTuesOut() {
-        return tuesOut;
-    }
-
-    /**
-     * @param tuesOut the tuesOut to set
-     */
-    public void setTuesOut(Date tuesOut) {
-        this.tuesOut = tuesOut;
-    }
-
-    /**
-     * @return the wedIn
-     */
-    public Date getWedIn() {
-        return wedIn;
-    }
-
-    /**
-     * @param wedIn the wedIn to set
-     */
-    public void setWedIn(Date wedIn) {
-        this.wedIn = wedIn;
-    }
-
-    /**
-     * @return the wedOut
-     */
-    public Date getWedOut() {
-        return wedOut;
-    }
-
-    /**
-     * @param wedOut the wedOut to set
-     */
-    public void setWedOut(Date wedOut) {
-        this.wedOut = wedOut;
-    }
-
-    /**
-     * @return the thurIn
-     */
-    public Date getThurIn() {
-        return thurIn;
-    }
-
-    /**
-     * @param thurIn the thurIn to set
-     */
-    public void setThurIn(Date thurIn) {
-        this.thurIn = thurIn;
-    }
-
-    /**
-     * @return the thurOut
-     */
-    public Date getThurOut() {
-        return thurOut;
-    }
-
-    /**
-     * @param thurOut the thurOut to set
-     */
-    public void setThurOut(Date thurOut) {
-        this.thurOut = thurOut;
-    }
-
-    /**
-     * @return the friIn
-     */
-    public Date getFriIn() {
-        return friIn;
-    }
-
-    /**
-     * @param friIn the friIn to set
-     */
-    public void setFriIn(Date friIn) {
-        this.friIn = friIn;
-    }
-
-    /**
-     * @return the friOut
-     */
-    public Date getFriOut() {
-        return friOut;
-    }
-
-    /**
-     * @param friOut the friOut to set
-     */
-    public void setFriOut(Date friOut) {
-        this.friOut = friOut;
-    }
-    
-    
 }
