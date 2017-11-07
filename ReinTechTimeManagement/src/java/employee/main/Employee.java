@@ -22,8 +22,31 @@ public class Employee implements Serializable{
     private String status;
     private double payRate;
     
+<<<<<<< HEAD
     public Employee(){}
+=======
+    // Date Variables
+    //updated date variables
+    private Date day;
+    private DATETIME startTime;
+    private DATETIME lunchOut;
+    private DATETIME lunchIn;
+    private DATEIME outTime;
     
+    //changing variables to match database revisions - Alex 11/3 9:25AM
+    /*private Date wedOut;
+    private Date thurIn;
+    private Date thurOut;
+    private Date friIn;
+    private Date friOut;*/
+    
+    public Employee(){
+        
+    }
+>>>>>>> 7dfae34133e38b14a4bcd7754261d581fc1197e4
+    
+    //TODO: redo constructor with updated variables
+    //TODO: remove unused accessor/mutator methods
     public Employee(int employeeID, String firstName, String lastName, 
                     String password, int authLevel, String status, 
                     double payRate){
