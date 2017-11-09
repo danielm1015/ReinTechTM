@@ -27,22 +27,15 @@
                         <th colspan="2" id="lunchColumn">Lunch</th>
                         <th>End</th>
                     </tr>
-                    
-                    <!-- TODO: Remove this table data after datbase is connected -->
-                    <td>11-10-2017</td>
-                    <td>7:30am</td>
-                    <td>11:30am</td>
-                    <td>12:00pm</td>
-                    <td>4:00pm</td>
-                    
+                                    
                     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
                     <c:forEach var="timeClock" items="${timeClock}">
                     <tr>
-                      <!--<td>${timeClock.day}</td>
+                      <td>${timeClock.day}</td>
                       <td>${timeClock.startTime}</td>
                       <td>${timeClock.lunchOut}</td>
                       <td>${timeClock.lunchIn}</td>
-                      <td>${timeClock.endTime}</td>-->
+                      <td>${timeClock.endTime}</td>
                       
                     </tr>
                     </c:forEach>
