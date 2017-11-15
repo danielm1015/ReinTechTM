@@ -9,12 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
-        <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+        <link rel="stylesheet" href="styles/viewEmployees.css" type="text/css"/>
+        <script src="modernizr-1.5.js"></script>
         <title>View Employees</title>
     </head>
     
     <body>
-        <div id="container"><!-- START DIV CONTAINER -->
             
             <div id="employeeFormPanel">
                 <form id="employeeForm">
@@ -29,7 +29,7 @@
                     <label class="pad_top">Pay Rate:</label>
                     <input type="text" name="payRate" value="${employee.payRate}">
                 </form>
-            <div>
+            </div>
             
             <div id="employeeTablePanel">
                 <table id="employeeTable">
@@ -57,13 +57,11 @@
                           <td><button action="viewHours">View Hours</button></td>
                           <!-- after the current panels are hidden timeClockTablePanel and timeClockFormPanel will display -->
                           
-
                         </tr>
                         </c:forEach>
 
                 </table>
-            <div>
-            
+            </div>
             
             <div id="timeClockFormPanel">
                 <form id="timeClockForm">
@@ -109,8 +107,7 @@
                     
                 </table>
             </div>
-                
-        </div><!-- END CONTAINER DIV -->
+               
     </body>
     
 </html>

@@ -59,6 +59,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html\" charset=UTF-8\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"styles/main.css\" type=\"text/css\"/>\n");
+      out.write("        <script src=\"modernizr-1.5.js\"></script>\n");
       out.write("        <title>View Employees</title>\n");
       out.write("    </head>\n");
       out.write("    \n");
@@ -109,7 +110,6 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
       out.write("                </table>\n");
       out.write("            <div>\n");
-      out.write("            \n");
       out.write("            \n");
       out.write("            <div id=\"timeClockFormPanel\">\n");
       out.write("                <form id=\"timeClockForm\">\n");
@@ -213,7 +213,6 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
           out.write("                          <td><button action=\"viewHours\">View Hours</button></td>\n");
           out.write("                          <!-- after the current panels are hidden timeClockTablePanel and timeClockFormPanel will display -->\n");
           out.write("                          \n");
-          out.write("\n");
           out.write("                        </tr>\n");
           out.write("                        ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
