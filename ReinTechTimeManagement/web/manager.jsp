@@ -47,9 +47,7 @@
             <button action="clockOut">Clock-Out</button>
             <button action="changePass">Change Password</button>
             <button action="viewEmployees">View Employees</button>
-        
-            
-            THIS IS A TEST DELETE THISSSS
+
         </div>
     </body>
     

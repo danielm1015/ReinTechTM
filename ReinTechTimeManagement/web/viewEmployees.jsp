@@ -8,13 +8,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
         <link rel="stylesheet" href="styles/main.css" type="text/css"/>
         <title>View Employees</title>
     </head>
     
     <body>
         <div id="container"><!-- START DIV CONTAINER -->
+            
             <div id="employeeFormPanel">
                 <form id="employeeForm">
                     <label class="pad_top">Employee ID:</label>
@@ -62,7 +63,8 @@
 
                 </table>
             <div>
-             
+            
+            
             <div id="timeClockFormPanel">
                 <form id="timeClockForm">
                     <label class="pad_top">Day:</label>
@@ -89,8 +91,9 @@
                         <th>Options</th>
                     </tr>
                     
+                    
                     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-                        <c:forEach var="timeClock" items="${timeClocks}"><!-- make sure to name the timeClock array "timeClocks"
+                        <c:forEach var="timeClock" items="${timeClocks}">
                         <tr>
 
                           <td>${timeClock.day}</td>
