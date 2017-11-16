@@ -12,7 +12,7 @@ import java.util.Date;
  *
  * @author Alexander
  */
-public class Timeclock implements Serializable{
+public class TimeClock implements Serializable{
     
     private int employeeID;
     private Date day;
@@ -21,9 +21,9 @@ public class Timeclock implements Serializable{
     private Date lunchIn;
     private Date endTime;
     
-    public Timeclock(){}
+    public TimeClock(){}
     
-    public Timeclock(int employeeID, Date day, Date startTime, Date lunchOut, 
+    public TimeClock(int employeeID, Date day, Date startTime, Date lunchOut, 
                     Date lunchIn, Date endTime){
         
         this.employeeID = employeeID;

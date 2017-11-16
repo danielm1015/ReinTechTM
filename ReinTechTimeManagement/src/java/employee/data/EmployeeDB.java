@@ -6,6 +6,7 @@
 package employee.data;
 
 import employee.main.Employee;
+import employee.main.TimeClock;
 import java.util.ArrayList;
 
 public class EmployeeDB {
@@ -26,7 +27,13 @@ public class EmployeeDB {
 
     }
     
+    //TODO: WEEK 5-6 - get employee array list working
     public static ArrayList<Employee> selectEmployees(){
         
+    }
+    
+    //TODO: WEEK 5-6 - get timeclock array list working
+    public static ArrayList<TimeClock> selectTimeClocks(){
+    
     }
 }
