@@ -1,0 +1,46 @@
+/* 
+    Created on : Nov 15, 2017, 3:33:04 PM
+    Author     : Alexander
+*/
+
+/**************          HIDDEN PANELS          *******************************/
+#timeClockFormPanel, #timeClockTablePanel{
+    display:none;
+}
+
+/*****************       TABLE STYLES     *********************************/
+table, th, td {
+    
+    border: 1px solid black;
+    text-align:center;
+}
+
+table{
+    width:70%;
+    align-items: center;
+}
+
+th, td{
+    width:20%;
+}
+
+/*****************       FORM STYLES     *********************************/
+form{
+    width:70%;
+    text-align:center;
+}
+/*******************     BACKGROUNDS      ********************************/
+body{
+    background-image: url("images/blueBackDrop.jpg");
+    margin:5px;
+}
+
+div{
+    margin:5px;
+    padding:10px;
+}
+
+#employeeFormPanel, #employeeTablePanel{
+    background-color: rgba(255,255,255,.3);
+    display:block;
+}

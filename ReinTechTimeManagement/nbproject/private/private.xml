@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Alexander/Documents/GitHub/ReinTechTM/ReinTechTimeManagement/src/java/employee/main/Hours.java</file>
-            <file>file:/C:/Users/Alexander/Documents/GitHub/ReinTechTM/ReinTechTimeManagement/src/java/employee/data/EmployeeDB.java</file>
-            <file>file:/C:/Users/Alexander/Documents/GitHub/ReinTechTM/ReinTechTimeManagement/src/java/employee/main/Employee.java</file>
-            <file>file:/C:/Users/Alexander/Documents/GitHub/ReinTechTM/ReinTechTimeManagement/src/java/employee/main/Timeclock.java</file>
-            <file>file:/C:/Users/Alexander/Documents/GitHub/ReinTechTM/ReinTechTimeManagement/src/java/employee/data/EmployeesServlet.java</file>
+            <file>file:/C:/Users/Alexander/Documents/GitHub/ReinTechTM/ReinTechTimeManagement/web/login.jsp</file>
+            <file>file:/C:/Users/Alexander/Documents/GitHub/ReinTechTM/ReinTechTimeManagement/web/styles/main.css</file>
+            <file>file:/C:/Users/Alexander/Documents/GitHub/ReinTechTM/ReinTechTimeManagement/web/employee.jsp</file>
+            <file>file:/C:/Users/Alexander/Documents/GitHub/ReinTechTM/ReinTechTimeManagement/web/viewEmployees.jsp</file>
         </group>
     </open-files>
 </project-private>

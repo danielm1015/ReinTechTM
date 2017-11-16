@@ -57,13 +57,15 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html\" charset=UTF-8\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"styles/main.css\" type=\"text/css\"/>\n");
+      out.write("        <script src=\"modernizr-1.5.js\"></script>\n");
       out.write("        <title>View Employees</title>\n");
       out.write("    </head>\n");
       out.write("    \n");
       out.write("    <body>\n");
       out.write("        <div id=\"container\"><!-- START DIV CONTAINER -->\n");
+      out.write("            \n");
       out.write("            <div id=\"employeeFormPanel\">\n");
       out.write("                <form id=\"employeeForm\">\n");
       out.write("                    <label class=\"pad_top\">Employee ID:</label>\n");
@@ -108,7 +110,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
       out.write("                </table>\n");
       out.write("            <div>\n");
-      out.write("                \n");
+      out.write("            \n");
       out.write("            <div id=\"timeClockFormPanel\">\n");
       out.write("                <form id=\"timeClockForm\">\n");
       out.write("                    <label class=\"pad_top\">Day:</label>\n");
@@ -132,6 +134,27 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${timeClock.endTime}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\">\n");
       out.write("                </form>\n");
+      out.write("            </div>\n");
+      out.write("                \n");
+      out.write("            <div id=\"timeClockTablePanel\">\n");
+      out.write("                <table id=\"timeClockTable\">\n");
+      out.write("                    <tr>\n");
+      out.write("                        <th>Day</th>\n");
+      out.write("                        <th>Start Time</th>\n");
+      out.write("                        <th>Lunch Start</th>\n");
+      out.write("                        <th>Lunch End</th>\n");
+      out.write("                        <th>End Time</th>\n");
+      out.write("                        <th>Options</th>\n");
+      out.write("                    </tr>\n");
+      out.write("                    \n");
+      out.write("                    \n");
+      out.write("                    \n");
+      out.write("                        ");
+      if (_jspx_meth_c_forEach_1(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("                    \n");
+      out.write("                </table>\n");
       out.write("            </div>\n");
       out.write("                \n");
       out.write("        </div><!-- END CONTAINER DIV -->\n");
@@ -184,9 +207,12 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
           out.write("                          <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.payRate}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\n");
+          out.write("                          <!-- edit action will trigger selected employees information to the above form -->\n");
           out.write("                          <td><button action=\"editEmployee\">Edit</button></td>\n");
+          out.write("                          <!-- view hours action will hide employeeTablePanel and employeeFormPanel -->\n");
           out.write("                          <td><button action=\"viewHours\">View Hours</button></td>\n");
-          out.write("\n");
+          out.write("                          <!-- after the current panels are hidden timeClockTablePanel and timeClockFormPanel will display -->\n");
+          out.write("                          \n");
           out.write("                        </tr>\n");
           out.write("                        ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
@@ -204,6 +230,63 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
     } finally {
       _jspx_th_c_forEach_0.doFinally();
       _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_forEach_1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_1.setParent(null);
+    _jspx_th_c_forEach_1.setVar("timeClock");
+    _jspx_th_c_forEach_1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${timeClocks}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int[] _jspx_push_body_count_c_forEach_1 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_forEach_1 = _jspx_th_c_forEach_1.doStartTag();
+      if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("                        <tr>\n");
+          out.write("\n");
+          out.write("                          <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${timeClock.day}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\n");
+          out.write("                          <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${timeClock.startTime}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\n");
+          out.write("                          <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${timeClock.lunchOut}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\n");
+          out.write("                          <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${timeClock.lunchIn}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\n");
+          out.write("                          <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${timeClock.endTime}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\n");
+          out.write("                          <!-- edit time button will populate the timeClockForm with the selected dates information -->\n");
+          out.write("                          <td><button action=\"editTime\">Edit</button></td>\n");
+          out.write("\n");
+          out.write("                        </tr>\n");
+          out.write("                        ");
+          int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_forEach_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_forEach_1[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_forEach_1.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_forEach_1.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_1);
     }
     return false;
   }
