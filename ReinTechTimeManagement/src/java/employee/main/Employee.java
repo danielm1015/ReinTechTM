@@ -19,7 +19,7 @@ public class Employee implements Serializable{
     private String lastName;
     private String password;
     private int authLevel;
-    private String status;
+    private boolean status;
     private double payRate;
    
     public Employee(){}
@@ -27,7 +27,7 @@ public class Employee implements Serializable{
     //TODO: redo constructor with updated variables
     //TODO: remove unused accessor/mutator methods
     public Employee(int employeeID, String firstName, String lastName, 
-                    String password, int authLevel, String status, 
+                    String password, int authLevel, boolean status, 
                     double payRate){
         
         this.employeeID = employeeID;
@@ -112,14 +112,14 @@ public class Employee implements Serializable{
     /**
      * @return the status
      */
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
     /**
      * @param status the status to set
      */
-    public void setStatus(String status) {
+    public void setStatus(Boolean status) {
         this.status = status;
     }
 

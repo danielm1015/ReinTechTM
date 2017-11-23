@@ -33,8 +33,40 @@ public class EmployeeDB {
     
     //TODO: WEEK 5-6 - get employee array list working
     public static ArrayList<Employee> selectEmployees(){
+        // work here danny
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection connection = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
+        String query = "SELECT * FROM CS_Employee";
+        try {
+            ps = connection.prepareStatement(query);
+            rs = ps.executeQuery();
+            ArrayList<Employee> employeeList = new ArrayList<Employee>();
+                while (rs.next())
+                {
+                    Employee employee = new Employee();
+                    employee.setEmployeeID(rs.getInt("EmployeeID"));
+                    employee.setAuthLevel(rs.getInt("AuthLevel"));
+                    employee.setPayRate(rs.getDouble("PayRate"));
+                    employee.setFirstName(rs.getString("FirstName"));
+                    employee.setLastName(rs.getString("LastName"));
+                    employee.setStatus(rs.getBoolean("Status"));
+                    employeeList.add(employee);
+                }
+            return employeeList ;
+
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        } finally {
+            DBUtil.closeResultSet(rs);
+            DBUtil.closePreparedStatement(ps);
+            pool.freeConnection(connection);
+        }
     }
+
     
     public static ArrayList<TimeClock> selectTimeClocks(){
         ConnectionPool pool = ConnectionPool.getInstance();
@@ -42,7 +74,7 @@ public class EmployeeDB {
         PreparedStatement ps = null;
         ResultSet rs = null;
         
-        String query = "SELECT * FROM Timeclock";
+        String query = "SELECT * FROM CS_WorkHours";
         try {
             ps = connection.prepareStatement(query);
             rs = ps.executeQuery();
