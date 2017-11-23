@@ -61,6 +61,7 @@
                         </c:forEach>
 
                 </table>
+                        <p><a href="viewEmployees">Refresh</a></p>
             </div>
             
             <div id="timeClockFormPanel">

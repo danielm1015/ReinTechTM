@@ -58,13 +58,12 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html\" charset=UTF-8\">\n");
-      out.write("        <link rel=\"stylesheet\" href=\"styles/main.css\" type=\"text/css\"/>\n");
+      out.write("        <link rel=\"stylesheet\" href=\"styles/viewEmployees.css\" type=\"text/css\"/>\n");
       out.write("        <script src=\"modernizr-1.5.js\"></script>\n");
       out.write("        <title>View Employees</title>\n");
       out.write("    </head>\n");
       out.write("    \n");
       out.write("    <body>\n");
-      out.write("        <div id=\"container\"><!-- START DIV CONTAINER -->\n");
       out.write("            \n");
       out.write("            <div id=\"employeeFormPanel\">\n");
       out.write("                <form id=\"employeeForm\">\n");
@@ -89,7 +88,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.payRate}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\">\n");
       out.write("                </form>\n");
-      out.write("            <div>\n");
+      out.write("            </div>\n");
       out.write("            \n");
       out.write("            <div id=\"employeeTablePanel\">\n");
       out.write("                <table id=\"employeeTable\">\n");
@@ -109,7 +108,8 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
       out.write("\n");
       out.write("                </table>\n");
-      out.write("            <div>\n");
+      out.write("                        <p><a href=\"viewEmployees\">Refresh</a></p>\n");
+      out.write("            </div>\n");
       out.write("            \n");
       out.write("            <div id=\"timeClockFormPanel\">\n");
       out.write("                <form id=\"timeClockForm\">\n");
@@ -156,8 +156,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                    \n");
       out.write("                </table>\n");
       out.write("            </div>\n");
-      out.write("                \n");
-      out.write("        </div><!-- END CONTAINER DIV -->\n");
+      out.write("               \n");
       out.write("    </body>\n");
       out.write("    \n");
       out.write("</html>\n");

@@ -34,28 +34,42 @@ public class EmployeesServlet extends HttpServlet {
         
         // get current action
         String action = request.getParameter("action");
+        
         if (action == null) {
             action = "display_employees";  // default action
         }
         
         //verify user and launch proper landing page
         if (action.equals("verifyLogIn")) {            
-            int employeeID = request.parameter("employeeID");
-            int authLevel = request.parameter("authLevel");
-            String password = request.parameter("password");
+            int employeeID = Integer.parseInt(request.getParameter("employeeID"));
+            int authLevel = Integer.parseInt(request.getParameter("authLevel"));
+            String password = request.getParameter("password");
             
-        if (action.equals("display_users")) {            
+        } 
+        
+        if (action.equals("display_employees")) {            
             // get list of users
             ArrayList<Employee> employees = EmployeeDB.selectEmployees();            
             request.setAttribute("employees", employees);
             url="/viewEmployees.jsp";
-            
-        } 
+        }
+        
         getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);
         
     }
-          
+     
+    @Override
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException {
+        doPost(request, response);
+    }
+    
         
 }
+
+
+
+            
