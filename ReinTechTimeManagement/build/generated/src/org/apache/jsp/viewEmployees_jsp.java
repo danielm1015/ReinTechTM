@@ -108,7 +108,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
       out.write("\n");
       out.write("                </table>\n");
-      out.write("                        <p><a href=\"viewEmployees\">Refresh</a></p>\n");
+      out.write("                        <p><a href=\"employeeAdmin\">Refresh</a></p>\n");
       out.write("            </div>\n");
       out.write("            \n");
       out.write("            <div id=\"timeClockFormPanel\">\n");
@@ -181,7 +181,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_0.setParent(null);
-    _jspx_th_c_forEach_0.setVar("employee");
+    _jspx_th_c_forEach_0.setVar("employeeList");
     _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employees}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
     try {
