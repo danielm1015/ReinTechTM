@@ -5,6 +5,7 @@
  */
 package employee.data;
 
+import employee.main.Employee;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -43,6 +44,11 @@ public class EmployeesServlet extends HttpServlet {
             int authLevel = request.parameter("authLevel");
             String password = request.parameter("password");
             
+        if (action.equals("display_users")) {            
+            // get list of users
+            ArrayList<Employee> employees = EmployeeDB.selectEmployees();            
+            request.setAttribute("employees", employees);
+            url="/viewEmployees.jsp";
             
         } 
         getServletContext()
