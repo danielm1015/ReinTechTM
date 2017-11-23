@@ -39,7 +39,7 @@ public class EmployeeDB {
         PreparedStatement ps = null;
         ResultSet rs = null;
         
-        String query = "SELECT * FROM CS_Employee";
+        String query = "SELECT * FROM cs_employee";
         try {
             ps = connection.prepareStatement(query);
             rs = ps.executeQuery();
@@ -74,7 +74,7 @@ public class EmployeeDB {
         PreparedStatement ps = null;
         ResultSet rs = null;
         
-        String query = "SELECT * FROM CS_WorkHours";
+        String query = "SELECT * FROM cs_workhours";
         try {
             ps = connection.prepareStatement(query);
             rs = ps.executeQuery();

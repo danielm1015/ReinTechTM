@@ -23,7 +23,7 @@ public class ConnectionPool {
     private ConnectionPool() {
         try {
             InitialContext ic = new InitialContext();
-            dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/capstoneprep");
+            dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/capstone");
         } catch (NamingException e) {
             System.out.println(e);
         }
