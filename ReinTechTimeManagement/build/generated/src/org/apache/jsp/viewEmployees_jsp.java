@@ -108,7 +108,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
       out.write("\n");
       out.write("                </table>\n");
-      out.write("                        <p><a href=\"employeeAdmin\">Refresh</a></p>\n");
+      out.write("                        <p><a href=\"employee\">Refresh</a></p>\n");
       out.write("            </div>\n");
       out.write("            \n");
       out.write("            <div id=\"timeClockFormPanel\">\n");

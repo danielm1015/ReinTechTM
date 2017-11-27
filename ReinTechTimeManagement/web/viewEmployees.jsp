@@ -61,7 +61,7 @@
                         </c:forEach>
 
                 </table>
-                        <p><a href="employeeAdmin">Refresh</a></p>
+                        <p><a href="employee">Refresh</a></p>
             </div>
             
             <div id="timeClockFormPanel">
