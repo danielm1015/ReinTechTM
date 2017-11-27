@@ -43,14 +43,14 @@
                     </tr>
 
                     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-                        <c:forEach var="employeeList" items="${employees}">
+                        <c:forEach var="employeeList" items="${employee}">
                         <tr>
 
-                          <td>${employee.employeeID}</td>
-                          <td>${employee.firstName}</td>
-                          <td>${employee.lastName}</td>
-                          <td>${employee.authLevel}</td>
-                          <td>${employee.payRate}</td>
+                          <td>${employee.EmployeeID}</td>
+                          <td>${employee.FirstName}</td>
+                          <td>${employee.LastName}</td>
+                          <td>${employee.AuthLevel}</td>
+                          <td>${employee.PayRate}</td>
                           <!-- edit action will trigger selected employees information to the above form -->
                           <td><button action="editEmployee">Edit</button></td>
                           <!-- view hours action will hide employeeTablePanel and employeeFormPanel -->

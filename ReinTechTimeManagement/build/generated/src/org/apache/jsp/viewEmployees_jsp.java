@@ -182,7 +182,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
     _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_0.setParent(null);
     _jspx_th_c_forEach_0.setVar("employeeList");
-    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employees}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
     try {
       int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
@@ -192,19 +192,19 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
           out.write("                        <tr>\n");
           out.write("\n");
           out.write("                          <td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.employeeID}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.EmployeeID}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\n");
           out.write("                          <td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.firstName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.FirstName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\n");
           out.write("                          <td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.lastName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.LastName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\n");
           out.write("                          <td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.authLevel}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.AuthLevel}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\n");
           out.write("                          <td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.payRate}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.PayRate}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\n");
           out.write("                          <!-- edit action will trigger selected employees information to the above form -->\n");
           out.write("                          <td><button action=\"editEmployee\">Edit</button></td>\n");

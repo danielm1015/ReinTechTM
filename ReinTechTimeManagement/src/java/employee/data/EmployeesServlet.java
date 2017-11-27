@@ -51,6 +51,7 @@ public class EmployeesServlet extends HttpServlet {
             // get list of users
             ArrayList<Employee> employeeList = EmployeeDB.selectEmployees();            
             request.setAttribute("employees", employeeList);
+            url = "/viewEmployees.jsp";
         }
         
         getServletContext()
