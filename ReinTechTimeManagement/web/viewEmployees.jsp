@@ -43,7 +43,7 @@
                     </tr>
 
                     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-                        <c:forEach var="employeeList" items="${employee}">
+                        <c:forEach var="employeeList" items="${employees}">
                         <tr>
 
                           <td>${employee.EmployeeID}</td>
@@ -61,7 +61,7 @@
                         </c:forEach>
 
                 </table>
-                        <p><a href="employee">Refresh</a></p>
+                        <p><button action = "display_employees">Refresh</button></p>
             </div>
             
             <div id="timeClockFormPanel">
