@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
+        <meta charset=UTF-8">
         <link rel="stylesheet" href="styles/viewEmployees.css" type="text/css"/>
         <title>View Employees</title>
     </head>
@@ -16,7 +16,7 @@
     <body>
             
             <div id="employeeFormPanel">
-                <form id="employeeForm">
+                <form id="employeeForm" action="employee" method="POST">
                     <label class="pad_top">Employee ID:</label>
                     <input type="text" name="employeeID" value="${employee.employeeID}">
                     <label class="pad_top">First Name:</label>

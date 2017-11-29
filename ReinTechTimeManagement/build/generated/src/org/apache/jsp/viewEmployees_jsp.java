@@ -57,7 +57,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html\" charset=UTF-8\">\r\n");
+      out.write("        <meta charset=UTF-8\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"styles/viewEmployees.css\" type=\"text/css\"/>\r\n");
       out.write("        <title>View Employees</title>\r\n");
       out.write("    </head>\r\n");
@@ -65,7 +65,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    <body>\r\n");
       out.write("            \r\n");
       out.write("            <div id=\"employeeFormPanel\">\r\n");
-      out.write("                <form id=\"employeeForm\">\r\n");
+      out.write("                <form id=\"employeeForm\" action=\"employee\" method=\"POST\">\r\n");
       out.write("                    <label class=\"pad_top\">Employee ID:</label>\r\n");
       out.write("                    <input type=\"text\" name=\"employeeID\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.employeeID}", java.lang.String.class, (PageContext)_jspx_page_context, null));
