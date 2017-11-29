@@ -6,15 +6,17 @@
 package employee.data;
 
 import employee.main.Employee;
+//import employee.data.EmployeeDB;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
-import javax.servlet.ServletException;
+import javax.servlet.*;
+//import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
+import javax.servlet.http.*;
+/*import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSession;*/
 
 /**
  *
@@ -30,7 +32,7 @@ public class EmployeesServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
 
-        String url = "/login.jsp";
+        String url = "/viewEmployees.jsp";
         
         // get current action
         String action = request.getParameter("action");
@@ -39,21 +41,20 @@ public class EmployeesServlet extends HttpServlet {
             action = "display_employees";  // default action
         }
         
+        if (action.equals("display_employees")) {            
+            // get list of users
+            ArrayList<Employee> employees = EmployeeDB.selectEmployees();            
+            request.setAttribute("employees", employees);
+        }
+        
         //verify user and launch proper landing page
-        if (action.equals("verifyLogIn")) {            
+        else if (action.equals("verifyLogIn")) {            
             int employeeID = Integer.parseInt(request.getParameter("employeeID"));
             int authLevel = Integer.parseInt(request.getParameter("authLevel"));
             String password = request.getParameter("password");
             
         } 
-        
-        if (action.equals("display_employees")) {            
-            // get list of users
-            ArrayList<Employee> employeeList = EmployeeDB.selectEmployees();            
-            request.setAttribute("employees", employeeList);
-            url = "/viewEmployees.jsp";
-        }
-        
+
         getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);

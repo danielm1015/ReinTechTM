@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class EmployeeDB {
     
-    public static int insert(Employee employee){
+    /*public static int insert(Employee employee){
 
     }
     
@@ -29,7 +29,7 @@ public class EmployeeDB {
     
     public static Employee selectEmployee(int employeeID){
 
-    }
+    }*/
     
     //TODO: WEEK 5-6 - get employee array list working
     public static ArrayList<Employee> selectEmployees(){
@@ -39,11 +39,11 @@ public class EmployeeDB {
         PreparedStatement ps = null;
         ResultSet rs = null;
         
-        String query = "SELECT * FROM cs_employee";
+        String query = "SELECT * FROM cs_employees";
         try {
             ps = connection.prepareStatement(query);
             rs = ps.executeQuery();
-            ArrayList<Employee> employeeList = new ArrayList<Employee>();
+            ArrayList<Employee> employees = new ArrayList<>();
                 while (rs.next())
                 {
                     Employee employee = new Employee();
@@ -53,9 +53,9 @@ public class EmployeeDB {
                     employee.setFirstName(rs.getString("FirstName"));
                     employee.setLastName(rs.getString("LastName"));
                     employee.setStatus(rs.getBoolean("Status"));
-                    employeeList.add(employee);
+                    employees.add(employee);
                 }
-            return employeeList ;
+            return employees;
 
         } catch (SQLException e) {
             System.out.println(e);

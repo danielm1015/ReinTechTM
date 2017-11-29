@@ -8,16 +8,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
+        <meta charset=UTF-8">
         <link rel="stylesheet" href="styles/viewEmployees.css" type="text/css"/>
-        <script src="modernizr-1.5.js"></script>
         <title>View Employees</title>
     </head>
     
     <body>
             
             <div id="employeeFormPanel">
-                <form id="employeeForm">
+                <form id="employeeForm" action="employee" method="POST">
                     <label class="pad_top">Employee ID:</label>
                     <input type="text" name="employeeID" value="${employee.employeeID}">
                     <label class="pad_top">First Name:</label>
@@ -43,14 +42,14 @@
                     </tr>
 
                     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-                        <c:forEach var="employeeList" items="${employee}">
+                        <c:forEach var="employee" items="${employees}">
                         <tr>
 
-                          <td>${employee.EmployeeID}</td>
-                          <td>${employee.FirstName}</td>
-                          <td>${employee.LastName}</td>
-                          <td>${employee.AuthLevel}</td>
-                          <td>${employee.PayRate}</td>
+                          <td>${employee.employeeID}</td>
+                          <td>${employee.firstName}</td>
+                          <td>${employee.lastName}</td>
+                          <td>${employee.authLevel}</td>
+                          <td>${employee.payRate}</td>
                           <!-- edit action will trigger selected employees information to the above form -->
                           <td><button action="editEmployee">Edit</button></td>
                           <!-- view hours action will hide employeeTablePanel and employeeFormPanel -->
