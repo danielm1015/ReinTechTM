@@ -43,7 +43,7 @@ public class EmployeeDB {
         try {
             ps = connection.prepareStatement(query);
             rs = ps.executeQuery();
-            ArrayList<Employee> employeeList = new ArrayList<Employee>();
+            ArrayList<Employee> employees = new ArrayList<Employee>();
                 while (rs.next())
                 {
                     Employee employee = new Employee();
@@ -53,7 +53,7 @@ public class EmployeeDB {
                     employee.setFirstName(rs.getString("FirstName"));
                     employee.setLastName(rs.getString("LastName"));
                     employee.setStatus(rs.getBoolean("Status"));
-                    employeeList.add(employee);
+                    employees.add(employee);
                 }
             return employeeList ;
 

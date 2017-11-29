@@ -22,7 +22,10 @@ public class Employee implements Serializable{
     private boolean status;
     private double payRate;
    
-    public Employee(){}
+    public Employee(){
+
+        
+    }
     
     //TODO: redo constructor with updated variables
     //TODO: remove unused accessor/mutator methods

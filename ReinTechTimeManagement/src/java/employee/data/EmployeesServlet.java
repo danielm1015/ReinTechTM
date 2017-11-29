@@ -30,7 +30,7 @@ public class EmployeesServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
 
-        String url = "/login.jsp";
+        String url = "/viewEmployees.jsp";
         
         // get current action
         String action = request.getParameter("action");

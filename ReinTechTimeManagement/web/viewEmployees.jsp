@@ -10,7 +10,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
         <link rel="stylesheet" href="styles/viewEmployees.css" type="text/css"/>
-        <script src="modernizr-1.5.js"></script>
         <title>View Employees</title>
     </head>
     
@@ -43,7 +42,7 @@
                     </tr>
 
                     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-                        <c:forEach var="employeeList" items="${employees}">
+                        <c:forEach var="employee" items="${employees}">
                         <tr>
 
                           <td>${employee.EmployeeID}</td>
@@ -61,7 +60,7 @@
                         </c:forEach>
 
                 </table>
-                        <p><button action = "display_employees">Refresh</button></p>
+                        <p><a href="employee">Refresh</a></p>
             </div>
             
             <div id="timeClockFormPanel">

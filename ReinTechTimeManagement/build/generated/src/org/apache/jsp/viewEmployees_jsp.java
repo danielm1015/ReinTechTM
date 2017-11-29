@@ -59,7 +59,6 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html\" charset=UTF-8\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"styles/viewEmployees.css\" type=\"text/css\"/>\r\n");
-      out.write("        <script src=\"modernizr-1.5.js\"></script>\r\n");
       out.write("        <title>View Employees</title>\r\n");
       out.write("    </head>\r\n");
       out.write("    \r\n");
@@ -108,7 +107,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\r\n");
       out.write("\r\n");
       out.write("                </table>\r\n");
-      out.write("                        <p><button action = \"display_employees\">Refresh</button></p>\r\n");
+      out.write("                        <p><a href=\"employee\">Refresh</a></p>\r\n");
       out.write("            </div>\r\n");
       out.write("            \r\n");
       out.write("            <div id=\"timeClockFormPanel\">\r\n");
@@ -181,7 +180,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
     _jspx_th_c_forEach_0.setParent(null);
-    _jspx_th_c_forEach_0.setVar("employeeList");
+    _jspx_th_c_forEach_0.setVar("employee");
     _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employees}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
     try {
