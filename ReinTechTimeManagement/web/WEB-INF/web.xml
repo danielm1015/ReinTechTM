@@ -12,6 +12,14 @@
         <servlet-name>EmployeesServlet</servlet-name>
         <url-pattern>/employee</url-pattern>
     </servlet-mapping>
+	<servlet>
+    <servlet-name>HoursServlet</servlet-name>
+    <servlet-class>employee.data.HoursServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>HoursServlet</servlet-name>
+    <url-pattern>/hour</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
