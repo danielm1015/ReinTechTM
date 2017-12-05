@@ -6,7 +6,6 @@
 package employee.data;
 
 import employee.main.Employee;
-import employee.main.TimeClock;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -124,7 +123,7 @@ public class EmployeeDB {
             pool.freeConnection(connection);
         }
     }
-
+    
     public static ArrayList<Employee> selectEmployees(){
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
@@ -157,40 +156,5 @@ public class EmployeeDB {
             DBUtil.closePreparedStatement(ps);
             pool.freeConnection(connection);
         }
-    }
-
-    
-    public static ArrayList<TimeClock> selectTimeClocks(){
-        ConnectionPool pool = ConnectionPool.getInstance();
-        Connection connection = pool.getConnection();
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        
-        String query = "SELECT * FROM cs_workhours";
-        try {
-            ps = connection.prepareStatement(query);
-            rs = ps.executeQuery();
-            ArrayList<TimeClock> timeClocks = new ArrayList<TimeClock>();
-            while (rs.next())
-            {
-                TimeClock timeClock = new TimeClock();
-                timeClock.setDay(rs.getDate("day"));
-                timeClock.setStartTime(rs.getDate("startTime"));
-                timeClock.setLunchOut(rs.getDate("lunchOut"));
-                timeClock.setLunchIn(rs.getDate("lunchIn"));
-                timeClock.setEndTime(rs.getDate("endTime"));
-                
-                timeClocks.add(timeClock);
-            }
-            return timeClocks;
-        } catch (SQLException e) {
-            System.out.println(e);
-            return null;
-        } finally {
-            DBUtil.closeResultSet(rs);
-            DBUtil.closePreparedStatement(ps);
-            pool.freeConnection(connection);
-        }
-                
     }
 }

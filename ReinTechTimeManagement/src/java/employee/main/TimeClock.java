@@ -15,16 +15,16 @@ import java.util.Date;
 public class TimeClock implements Serializable{
     
     private int employeeID;
-    private Date day;
-    private Date startTime;
-    private Date lunchOut;
-    private Date lunchIn;
-    private Date endTime;
+    private String day;
+    private String startTime;
+    private String lunchOut;
+    private String lunchIn;
+    private String endTime;
     
     public TimeClock(){}
     
-    public TimeClock(int employeeID, Date day, Date startTime, Date lunchOut, 
-                    Date lunchIn, Date endTime){
+    public TimeClock(int employeeID, String day, String startTime, String lunchOut, 
+                    String lunchIn, String endTime){
         
         this.employeeID = employeeID;
         this.day = day;
@@ -51,70 +51,70 @@ public class TimeClock implements Serializable{
     /**
      * @return the day
      */
-    public Date getDay() {
+    public String getDay() {
         return day;
     }
 
     /**
      * @param day the day to set
      */
-    public void setDay(Date day) {
+    public void setDay(String day) {
         this.day = day;
     }
 
     /**
      * @return the startTime
      */
-    public Date getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
     /**
      * @param startTime the startTime to set
      */
-    public void setStartTime(Date startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
     /**
      * @return the lunchOut
      */
-    public Date getLunchOut() {
+    public String getLunchOut() {
         return lunchOut;
     }
 
     /**
      * @param lunchOut the lunchOut to set
      */
-    public void setLunchOut(Date lunchOut) {
+    public void setLunchOut(String lunchOut) {
         this.lunchOut = lunchOut;
     }
 
     /**
      * @return the lunchIn
      */
-    public Date getLunchIn() {
+    public String getLunchIn() {
         return lunchIn;
     }
 
     /**
      * @param lunchIn the lunchIn to set
      */
-    public void setLunchIn(Date lunchIn) {
+    public void setLunchIn(String lunchIn) {
         this.lunchIn = lunchIn;
     }
 
     /**
      * @return the endTime
      */
-    public Date getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
     /**
      * @param endTime the endTime to set
      */
-    public void setEndTime(Date endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
     
