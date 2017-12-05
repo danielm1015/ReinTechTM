@@ -17,8 +17,9 @@
             
             <div id="employeeFormPanel">
                 <form id="employeeForm" action="employee" method="POST">
+                    <input type="hidden" name="action" value="update_employee"> 
                     <label class="pad_top">Employee ID:</label>
-                    <input type="text" name="employeeID" value="${employee.employeeID}"><br>
+                    <input type="text" name="employeeID" value="${employee.employeeID}" disabled="true"><br>
                     <label class="pad_top">First Name:</label>
                     <input type="text" name="firstName" value="${employee.firstName}"><br>
                     <label class="pad_top">Last Name:</label>
@@ -27,6 +28,7 @@
                     <input type="text" name="authLevel" value="${employee.authLevel}"><br>
                     <label class="pad_top">Pay Rate:</label>
                     <input type="text" name="payRate" value="${employee.payRate}"><br>
+                    <input type="submit" value="Update">
                 </form>
 
             </div>
@@ -54,7 +56,7 @@
                           <!-- edit action will trigger selected employees information to the above form -->
                           <td><a href="employee?action=display_employee&amp;employeeID=${employee.employeeID}">Edit</a></td>
                           <!-- view hours action will hide employeeTablePanel and employeeFormPanel -->
-                          <td><a href="userAdmin?action=delete_employee&amp;employeeID=${employee.employeeID}">Update</a></td>
+                          <td><a href="userAdmin?action=delete_employee&amp;employeeID=${employee.employeeID}">Delete</a></td>
                           <!-- after the current panels are hidden timeClockTablePanel and timeClockFormPanel will display -->
                           
                         </tr>
