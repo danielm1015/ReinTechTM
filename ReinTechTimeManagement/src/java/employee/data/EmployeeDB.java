@@ -123,7 +123,7 @@ public class EmployeeDB {
             pool.freeConnection(connection);
         }
     }
-
+    
     public static ArrayList<Employee> selectEmployees(){
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
