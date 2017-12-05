@@ -11,16 +11,16 @@ import java.io.Serializable;
  *
  * @author Alexander
  */
-public class Hours implements Serializable{
+public class Hour implements Serializable{
     
     private int employeeID;
     private double totalHours;
     private double regHours;
     private double overHours;
     
-    public Hours(){}
+    public Hour(){}
     
-    public Hours(int employeeID, double totalHours, double regHours, 
+    public Hour(int employeeID, double totalHours, double regHours, 
                 double overHours){
         
         this.employeeID = employeeID;
