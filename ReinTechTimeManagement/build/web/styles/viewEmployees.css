@@ -3,11 +3,6 @@
     Author     : Alexander
 */
 
-/**************          HIDDEN PANELS          *******************************/
-#timeClockFormPanel, #timeClockTablePanel{
-    display:none;
-}
-
 /*****************       TABLE STYLES     *********************************/
 table, th, td {
     
@@ -40,7 +35,7 @@ div{
     padding:10px;
 }
 
-#employeeFormPanel, #employeeTablePanel{
+#employeeFormPanel, #employeeTablePanel, #timeClockFormPanel, #timeClockTablePanel{
     background-color: rgba(255,255,255,.3);
     display:block;
 }
