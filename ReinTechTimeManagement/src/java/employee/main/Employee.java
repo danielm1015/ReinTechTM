@@ -22,6 +22,7 @@ public class Employee implements Serializable{
     private boolean status;
     private double payRate;
    
+    
     public Employee(){
 
         

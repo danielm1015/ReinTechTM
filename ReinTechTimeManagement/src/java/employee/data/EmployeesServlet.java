@@ -47,6 +47,13 @@ public class EmployeesServlet extends HttpServlet {
             request.setAttribute("employees", employees);
         }
         
+        else if (action.equals("display_employee")) {
+            int employeeID = Integer.parseInt(request.getParameter("employeeID"));
+            Employee employee = EmployeeDB.selectEmployee(employeeID);
+            session.setAttribute("employee", employee);
+            url = "/viewEmployees.jsp";
+        }
+        
         //verify user and launch proper landing page
         else if (action.equals("verifyLogIn")) {            
             int employeeID = Integer.parseInt(request.getParameter("employeeID"));

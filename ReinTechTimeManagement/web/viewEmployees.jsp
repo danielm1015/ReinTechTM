@@ -28,7 +28,7 @@
                     <label class="pad_top">Pay Rate:</label>
                     <input type="text" name="payRate" value="${employee.payRate}"><br>
                 </form>
-                <button action="update">Update</button><button action="delete">Delete</button>
+
             </div>
             
             <div id="employeeTablePanel">
@@ -52,9 +52,9 @@
                           <td>${employee.authLevel}</td>
                           <td>${employee.payRate}</td>
                           <!-- edit action will trigger selected employees information to the above form -->
-                          <td><button action="editEmployee">Edit</button></td>
+                          <td><a href="employee?action=display_employee&amp;employeeID=${employee.employeeID}">Edit</a></td>
                           <!-- view hours action will hide employeeTablePanel and employeeFormPanel -->
-                          <td><button action="viewHours">View Hours</button></td>
+                          <td><a href="userAdmin?action=delete_employee&amp;employeeID=${employee.employeeID}">Update</a></td>
                           <!-- after the current panels are hidden timeClockTablePanel and timeClockFormPanel will display -->
                           
                         </tr>
