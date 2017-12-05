@@ -31,9 +31,7 @@ public class EmployeeDB {
 
     }*/
     
-    //TODO: WEEK 5-6 - get employee array list working
     public static ArrayList<Employee> selectEmployees(){
-        // work here danny
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;

@@ -18,16 +18,17 @@
             <div id="employeeFormPanel">
                 <form id="employeeForm" action="employee" method="POST">
                     <label class="pad_top">Employee ID:</label>
-                    <input type="text" name="employeeID" value="${employee.employeeID}">
+                    <input type="text" name="employeeID" value="${employee.employeeID}"><br>
                     <label class="pad_top">First Name:</label>
-                    <input type="text" name="firstName" value="${employee.firstName}">
+                    <input type="text" name="firstName" value="${employee.firstName}"><br>
                     <label class="pad_top">Last Name:</label>
-                    <input type="text" name="lastName" value="${employee.lastName}">
+                    <input type="text" name="lastName" value="${employee.lastName}"><br>
                     <label class="pad_top">Auth Level:</label>
-                    <input type="text" name="authLevel" value="${employee.authLevel}">
+                    <input type="text" name="authLevel" value="${employee.authLevel}"><br>
                     <label class="pad_top">Pay Rate:</label>
-                    <input type="text" name="payRate" value="${employee.payRate}">
+                    <input type="text" name="payRate" value="${employee.payRate}"><br>
                 </form>
+                <button action="update">Update</button><button action="delete">Delete</button>
             </div>
             
             <div id="employeeTablePanel">
@@ -61,51 +62,6 @@
 
                 </table>
                         <p><a href="employee">Refresh</a></p>
-            </div>
-            
-            <div id="timeClockFormPanel">
-                <form id="timeClockForm">
-                    <label class="pad_top">Day:</label>
-                    <input type="date" name="day" value="${timeClock.day}">
-                    <label class="pad_top">Start Time:</label>
-                    <input type="date" name="startTime" value="${timeClock.startTime}">
-                    <label class="pad_top">Lunch Start:</label>
-                    <input type="date" name="lunchOut" value="${timeClock.lunchOut}">
-                    <label class="pad_top">Lunch End:</label>
-                    <input type="date" name="lunchIn" value="${timeClock.lunchIn}">
-                    <label class="pad_top">End Time:</label>
-                    <input type="date" name="endTime" value="${timeClock.endTime}">
-                </form>
-            </div>
-                
-            <div id="timeClockTablePanel">
-                <table id="timeClockTable">
-                    <tr>
-                        <th>Day</th>
-                        <th>Start Time</th>
-                        <th>Lunch Start</th>
-                        <th>Lunch End</th>
-                        <th>End Time</th>
-                        <th>Options</th>
-                    </tr>
-                    
-                    
-                    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-                        <c:forEach var="timeClock" items="${timeClocks}">
-                        <tr>
-
-                          <td>${timeClock.day}</td>
-                          <td>${timeClock.startTime}</td>
-                          <td>${timeClock.lunchOut}</td>
-                          <td>${timeClock.lunchIn}</td>
-                          <td>${timeClock.endTime}</td>
-                          <!-- edit time button will populate the timeClockForm with the selected dates information -->
-                          <td><button action="editTime">Edit</button></td>
-
-                        </tr>
-                        </c:forEach>
-                    
-                </table>
             </div>
                
     </body>

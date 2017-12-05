@@ -1,29 +1,27 @@
-/*
-Java Object Variables
+package employee.data;
 
-employeeID
-totalHours
-regHours
-overHours
-
-
-*/
+import employee.main.Hour;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class HourDB {
 	
 	public static int insert(Hour hour){
 		//TODO:COMPLETE METHOD
-		return null;
+		return 0;
 	}
 	
 	public static int update(Hour hour){
 		//TODO:COMPLETE METHOD
-		return null;
+		return 0;
 	}
 	
 	public static int delete(Hour hour){
 		//TODO:COMPLETE METHOD
-		return null;
+		return 0;
 	}
 	
 	public static Hour selectHour(int employeeID){
@@ -44,7 +42,7 @@ public class HourDB {
             ArrayList<Hour> hours = new ArrayList<>();
                 while (rs.next())
                 {
-                    Hour hour = new hour();
+                    Hour hour = new Hour();
                     hour.setEmployeeID(rs.getInt("EmployeeID"));
                     hour.setTotalHours(rs.getDouble("TotalHours"));
                     hour.setRegHours(rs.getDouble("RegHours"));
