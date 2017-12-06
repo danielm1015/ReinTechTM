@@ -56,7 +56,7 @@ public class EmployeePageDB {
     ResultSet rs = null;
 
     String query = "SELECT * FROM cs_workhours "
-                + "WHERE employeeID =?";
+                + "WHERE employeeID = ?";
     try {
         ps = connection.prepareStatement(query);
         rs = ps.executeQuery();

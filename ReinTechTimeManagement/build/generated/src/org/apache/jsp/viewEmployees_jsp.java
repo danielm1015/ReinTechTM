@@ -65,12 +65,12 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    <body>\r\n");
       out.write("            \r\n");
       out.write("            <div id=\"employeeFormPanel\">\r\n");
-      out.write("                <form id=\"employeeForm\" action=\"employee\" method=\"POST\">\r\n");
+      out.write("                <form action=\"employee\" method=\"post\">\r\n");
       out.write("                    <input type=\"hidden\" name=\"action\" value=\"update_employee\"> \r\n");
       out.write("                    <label class=\"pad_top\">Employee ID:</label>\r\n");
       out.write("                    <input type=\"text\" name=\"employeeID\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.employeeID}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\" disabled=\"true\"><br>\r\n");
+      out.write("\"><br>\r\n");
       out.write("                    <label class=\"pad_top\">First Name:</label>\r\n");
       out.write("                    <input type=\"text\" name=\"firstName\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.firstName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -167,7 +167,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.employeeID}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\">Edit</a></td>\r\n");
           out.write("                          <!-- view hours action will hide employeeTablePanel and employeeFormPanel -->\r\n");
-          out.write("                          <td><a href=\"userAdmin?action=delete_employee&amp;employeeID=");
+          out.write("                          <td><a href=\"employee?action=delete_employee&amp;employeeID=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.employeeID}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\">Delete</a></td>\r\n");
           out.write("                          <!-- after the current panels are hidden timeClockTablePanel and timeClockFormPanel will display -->\r\n");

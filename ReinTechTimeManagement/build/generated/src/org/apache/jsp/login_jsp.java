@@ -62,11 +62,12 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                employees information in the mySQL database and then launch the\n");
       out.write("                appropriate clock in/out page\n");
       out.write("            -->\n");
-      out.write("            <form action=\"verifyLogIn\" method=\"POST\">\n");
+      out.write("            <form action=\"employeePage\" method=\"POST\">\n");
+      out.write("                <input type=\"text\" name=\"employeeID\">\n");
       out.write("                Employee ID:<br>\n");
-      out.write("                <input type=\"text\" name=\"employeeID\"><br>\n");
-      out.write("                Password:<br>\n");
-      out.write("                <input type=\"password\" name=\"password\"><br><br>\n");
+      out.write("                <input type=\"password\" name=\"password\">\n");
+      out.write("                Password:<br><br>\n");
+      out.write("\n");
       out.write("                <td><a href=\"employeePage?action=display_employeePage&amp;employeeID=");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.employeeID}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\">Log In</a></td>\n");
