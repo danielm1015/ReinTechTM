@@ -46,7 +46,7 @@
             <button action="clockIn">Clock-In</button>
             <button action="clockOut">Clock-Out</button>
             <button action="changePass">Change Password</button>
-            <button action="viewEmployees">View Employees</button>
+            <a href="employee">View Employees</a>
 
         </div>
     </body>
