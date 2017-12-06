@@ -28,6 +28,14 @@
     	<servlet-name>TimeClocksServlet</servlet-name>
     	<url-pattern>/timeclock</url-pattern>
     </servlet-mapping>
+    <servlet>
+    	<servlet-name>EmployeePagesServlet</servlet-name>
+    	<servlet-class>employee.data.EmployeePagesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>EmployeePagesServlet</servlet-name>
+    	<url-pattern>/employeePage</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
