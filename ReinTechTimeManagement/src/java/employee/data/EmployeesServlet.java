@@ -13,6 +13,7 @@ import javax.servlet.*;
 //import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import javax.swing.JOptionPane;
 /*import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -81,11 +82,29 @@ public class EmployeesServlet extends HttpServlet {
         }
         
         //verify user and launch proper landing page
-        else if (action.equals("verifyLogIn")) {            
-            int employeeID = Integer.parseInt(request.getParameter("employeeID"));
-            int authLevel = Integer.parseInt(request.getParameter("authLevel"));
-            String password = request.getParameter("password");
+        else if (action.equals("verifyLogIn")) {           
             
+             JOptionPane.showMessageDialog(null, "in VEIRFYLOGIN ACTION METHOD");
+
+            int employeeID = Integer.parseInt(request.getParameter("employeeID"));
+           // int authLevel = Integer.parseInt(request.getParameter("authLevel"));
+            String password = request.getParameter("password");
+            int authLevel = 0;
+            
+            JOptionPane.showMessageDialog(null,"Employee ID: " + employeeID + "Password: " + password + "AuthLevel: " + authLevel);
+//            EmployeeDB emDBHandler = new EmployeeDB();
+//            emDBHandler.verifyLogin(employeeID);//, password);
+            
+            if(authLevel == 1){
+                url="/manager.jsp";
+            }
+            else if(authLevel == 2){
+                url="/employee.jsp";
+            }
+            else if(authLevel == 0){
+                System.out.println("authLevel 0 retry login");
+            }
+
         } 
 
         else if (action.equals("delete_employee")) {

@@ -6,13 +6,17 @@
 package employee.data;
 
 import employee.main.Employee;
+import employee.main.TimeClock;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class EmployeeDB {
+    
+    /*VERIFY ID MATCHES*/
     
     public static int insert(Employee employee){
         ConnectionPool pool = ConnectionPool.getInstance();
@@ -21,7 +25,7 @@ public class EmployeeDB {
 
         String query
                 = "INSERT INTO cs_employees (employeeID, firstName, lastName,"
-                + " authLevel, status, payRate) "
+                + " authLevel, status, payRate, password) "
                 + "VALUES (?, ?, ?, ?, ?, ?)";
         try {
             ps = connection.prepareStatement(query);
@@ -31,6 +35,7 @@ public class EmployeeDB {
             ps.setInt(3, employee.getAuthLevel());
             ps.setBoolean(4, employee.getStatus());
             ps.setDouble(6, employee.getPayRate());
+            ps.setString(6, employee.getPassword());
 
             return ps.executeUpdate();
         } catch (SQLException e) {
@@ -49,7 +54,7 @@ public class EmployeeDB {
 
         String query = "UPDATE cs_employees SET "
                 + "FirstName = ?, LastName = ?, "
-                + "PayRate =?, AuthLevel = ?, Status = ? "
+                + "PayRate =?, AuthLevel = ?, Status = ?, Password = ? "
                 + "WHERE employeeID = ?";
         try {
            ps = connection.prepareStatement(query);
@@ -70,6 +75,40 @@ public class EmployeeDB {
         }
     }
     
+    // EmployeeServlet will get ID and Password from login.jsp 
+    // & Validate if Employee Exists
+   protected int verifyLogin(int verifyID){ //String verifyPassword){
+       
+       JOptionPane.showMessageDialog(null, "in VEIRFYLOGIN METHOD ID:" + verifyID);
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection connection = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int authLevel = 0;
+
+        String query = "SELECT authLevel FROM cs_employees "
+                + "WHERE EmployeeID = ?";// and Password = ?";
+        try {
+            ps = connection.prepareStatement(query);
+            ps.setInt(1, verifyID);
+           // ps.setString(2, verifyPassword);
+            rs = ps.executeQuery();
+
+            
+            authLevel = rs.getInt(query);
+            
+            return authLevel;
+        } catch (SQLException e) {
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "ID and password doesnt match");
+            return authLevel;
+        } finally {
+            DBUtil.closePreparedStatement(ps);
+            pool.freeConnection(connection);
+        }
+    }
+    
+    // Delete 1 Employee using Employee ID
     public static int delete(Employee employee){
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
@@ -80,7 +119,7 @@ public class EmployeeDB {
         try {
             ps = connection.prepareStatement(query);
             ps.setInt(1, employee.getEmployeeID());
-
+            
             return ps.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
@@ -91,6 +130,7 @@ public class EmployeeDB {
         }
     }
     
+    // Select 1 employee using Employee ID
     public static Employee selectEmployee(int employeeID){
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
@@ -123,8 +163,10 @@ public class EmployeeDB {
             pool.freeConnection(connection);
         }
     }
-    
+
+    //TODO: WEEK 5-6 - get employee array list working
     public static ArrayList<Employee> selectEmployees(){
+        // work here danny
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
@@ -157,4 +199,42 @@ public class EmployeeDB {
             pool.freeConnection(connection);
         }
     }
+
+    
+    public static ArrayList<TimeClock> selectTimeClocks(){
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection connection = pool.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        String query = "SELECT * FROM cs_workhours";
+        try {
+            ps = connection.prepareStatement(query);
+            rs = ps.executeQuery();
+            ArrayList<TimeClock> timeClocks = new ArrayList<TimeClock>();
+            while (rs.next())
+            {
+//                TimeClock timeClock = new TimeClock();
+//                timeClock.setDay(rs.getDate("day"));
+//                timeClock.setStartTime(rs.getDate("startTime"));
+//                timeClock.setLunchOut(rs.getDate("lunchOut"));
+//                timeClock.setLunchIn(rs.getDate("lunchIn"));
+//                timeClock.setEndTime(rs.getDate("endTime"));
+//                
+//                timeClocks.add(timeClock);
+            }
+            return timeClocks;
+        } catch (SQLException e) {
+            System.out.println(e);
+            return null;
+        } finally {
+            DBUtil.closeResultSet(rs);
+            DBUtil.closePreparedStatement(ps);
+            pool.freeConnection(connection);
+        }
+                
+    }
 }
+
+
+

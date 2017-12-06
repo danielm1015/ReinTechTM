@@ -23,12 +23,13 @@
                 employees information in the mySQL database and then launch the
                 appropriate clock in/out page
             -->
-            <form>
+            <form action="employee" method="post">
+            <input type="hidden" name="action" value="verifyLogIn">      
                 Employee ID:<br>
                 <input type="text" name="employeeID"><br>
                 Password:<br>
                 <input type="password" name="password"><br><br>
-                <button type="submit" name="submit" action="verifyLogIn">Log In</button><br><br>
+                <button type="submit" value="update"name="submit" >Log In</button><br>
             </form> 
         </div>
     </body>
