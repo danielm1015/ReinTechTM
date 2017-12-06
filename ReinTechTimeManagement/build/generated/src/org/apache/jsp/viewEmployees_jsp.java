@@ -88,6 +88,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.payRate}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"><br>\r\n");
       out.write("                    <input type=\"submit\" value=\"Update\">\r\n");
+      out.write("                    <input type=\"submit\" value=\"Add\" action=\"add_employee\">\r\n");
       out.write("                </form>\r\n");
       out.write("\r\n");
       out.write("            </div>\r\n");

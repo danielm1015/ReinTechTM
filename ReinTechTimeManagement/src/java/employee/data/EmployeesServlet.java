@@ -80,6 +80,32 @@ public class EmployeesServlet extends HttpServlet {
             request.setAttribute("employees", employees);            
         }
         
+        else if (action.equals("add_employee")) {
+            // get parameters from the request
+            int employeeID = Integer.parseInt(request.getParameter("employeeID"));
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            String password = request.getParameter("password");
+            int authLevel = Integer.parseInt(request.getParameter("authLevel"));
+            boolean status = Boolean.parseBoolean(request.getParameter("status"));
+            double payRate = Double.parseDouble(request.getParameter("payRate"));
+
+            // create new employee
+            Employee employee = new Employee(employeeID, firstName, lastName, password, authLevel, status, payRate); 
+            employee.setEmployeeID(employeeID);
+            employee.setFirstName(firstName);
+            employee.setLastName(lastName);
+            employee.setPassword(password);
+            employee.setAuthLevel(authLevel);
+            employee.setStatus(status);
+            employee.setPayRate(payRate);
+            EmployeeDB.insert(employee);
+
+            // get and set updated users
+            ArrayList<Employee> employees = EmployeeDB.selectEmployees();            
+            request.setAttribute("employees", employees);            
+        }
+        
         //verify user and launch proper landing page
         else if (action.equals("verifyLogIn")) {            
             int employeeID = Integer.parseInt(request.getParameter("employeeID"));
