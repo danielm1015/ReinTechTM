@@ -84,16 +84,11 @@ public class EmployeesServlet extends HttpServlet {
         //verify user and launch proper landing page
         else if (action.equals("verifyLogIn")) {           
             
-             JOptionPane.showMessageDialog(null, "in VEIRFYLOGIN ACTION METHOD");
-
-            int employeeID = Integer.parseInt(request.getParameter("employeeID"));
+            int employeeID = Integer.parseInt(request.getParameter("loginID"));
            // int authLevel = Integer.parseInt(request.getParameter("authLevel"));
-            String password = request.getParameter("password");
-            int authLevel = 0;
-            
-            JOptionPane.showMessageDialog(null,"Employee ID: " + employeeID + "Password: " + password + "AuthLevel: " + authLevel);
-//            EmployeeDB emDBHandler = new EmployeeDB();
-//            emDBHandler.verifyLogin(employeeID);//, password);
+            //String password = request.getParameter("password");
+            int authLevel = 2;
+            authLevel = EmployeeDB.verifyLogin(employeeID);//, password);
             
             if(authLevel == 1){
                 url="/manager.jsp";
@@ -103,6 +98,7 @@ public class EmployeesServlet extends HttpServlet {
             }
             else if(authLevel == 0){
                 System.out.println("authLevel 0 retry login");
+                                url="/login.jsp";
             }
 
         } 

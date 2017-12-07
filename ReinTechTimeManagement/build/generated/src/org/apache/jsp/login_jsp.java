@@ -56,7 +56,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\r\n");
       out.write("        \r\n");
       out.write("        <div>\r\n");
-      out.write("            <!-- Employees and Managers will log in the same way\r\n");
+      out.write("        <!-- Employees and Managers will log in the same way\r\n");
       out.write("                This page will simply ask for the employee ID and password of\r\n");
       out.write("                the employee, the information will be matched against the\r\n");
       out.write("                employees information in the mySQL database and then launch the\r\n");
@@ -64,11 +64,11 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            -->\r\n");
       out.write("            <form action=\"employee\" method=\"post\">\r\n");
       out.write("            <input type=\"hidden\" name=\"action\" value=\"verifyLogIn\">      \r\n");
-      out.write("                Employee ID:<br>\r\n");
-      out.write("                <input type=\"text\" name=\"employeeID\"><br>\r\n");
-      out.write("                Password:<br>\r\n");
-      out.write("                <input type=\"password\" name=\"password\"><br><br>\r\n");
-      out.write("                <button type=\"submit\" value=\"update\"name=\"submit\" >Log In</button><br>\r\n");
+      out.write("                <label>Employee ID:</label><br>\r\n");
+      out.write("                    <input type=\"text\" name=\"loginID\"><br>\r\n");
+      out.write("                <label>Password:</label><br>\r\n");
+      out.write("                    <input type=\"password\" name=\"password\"><br><br>\r\n");
+      out.write("                <button type=\"submit\" value=\"update\" name=\"submit\" >Log In</button><br>\r\n");
       out.write("            </form> \r\n");
       out.write("        </div>\r\n");
       out.write("    </body>\r\n");

@@ -77,32 +77,32 @@ public class EmployeeDB {
     
     // EmployeeServlet will get ID and Password from login.jsp 
     // & Validate if Employee Exists
-   protected int verifyLogin(int verifyID){ //String verifyPassword){
+   protected static int verifyLogin(int verifyID){ //String verifyPassword){
        
-       JOptionPane.showMessageDialog(null, "in VEIRFYLOGIN METHOD ID:" + verifyID);
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
         int authLevel = 0;
 
-        String query = "SELECT authLevel FROM cs_employees "
+        String query = "SELECT AuthLevel FROM cs_employees "
                 + "WHERE EmployeeID = ?";// and Password = ?";
         try {
             ps = connection.prepareStatement(query);
             ps.setInt(1, verifyID);
            // ps.setString(2, verifyPassword);
             rs = ps.executeQuery();
-
             
-            authLevel = rs.getInt(query);
+            if (rs.next()) {
+                authLevel = rs.getInt("AuthLevel");
+            }
             
             return authLevel;
         } catch (SQLException e) {
             System.out.println(e);
-            JOptionPane.showMessageDialog(null, "ID and password doesnt match");
             return authLevel;
         } finally {
+            DBUtil.closeResultSet(rs);
             DBUtil.closePreparedStatement(ps);
             pool.freeConnection(connection);
         }
@@ -135,6 +135,7 @@ public class EmployeeDB {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
+           
         ResultSet rs = null;
 
         String query = "SELECT * FROM cs_employees "
