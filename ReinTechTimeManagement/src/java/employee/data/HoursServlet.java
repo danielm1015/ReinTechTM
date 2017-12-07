@@ -17,6 +17,7 @@ import javax.servlet.http.*;
  * @author Alexander
  */
 @WebServlet(name = "HoursServlet", urlPatterns = {"/hour"})
+
 public class HoursServlet extends HttpServlet {
 
     @Override

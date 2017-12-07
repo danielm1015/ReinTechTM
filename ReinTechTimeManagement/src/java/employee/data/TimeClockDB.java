@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class TimeClockDB {
     
-    public static int update(TimeClock timeClock){
+    public static int updateTimeClock(TimeClock timeClock){
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
