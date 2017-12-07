@@ -87,7 +87,7 @@ public class EmployeesServlet extends HttpServlet {
             int employeeID = Integer.parseInt(request.getParameter("loginID"));
            // int authLevel = Integer.parseInt(request.getParameter("authLevel"));
             //String password = request.getParameter("password");
-            int authLevel = 2;
+            int authLevel = 0;
             authLevel = EmployeeDB.verifyLogin(employeeID);//, password);
             
             if(authLevel == 1){
@@ -97,8 +97,7 @@ public class EmployeesServlet extends HttpServlet {
                 url="/employee.jsp";
             }
             else if(authLevel == 0){
-                System.out.println("authLevel 0 retry login");
-                                url="/login.jsp";
+               url="/login.jsp";
             }
 
         } 
