@@ -77,36 +77,44 @@ public class EmployeeDB {
     
     // EmployeeServlet will get ID and Password from login.jsp 
     // & Validate if Employee Exists
-   protected static int verifyLogin(int verifyID){ //String verifyPassword){
+   public static Employee verifyLogin(int verifyID, String verifyPassword){
        
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
-        ResultSet rs = null;
-        int authLevel = 0;
+        ResultSet rs = null; 
+        
+        JOptionPane.showMessageDialog(null, "Password and id: " + verifyPassword + " " + verifyID);
 
-        String query = "SELECT AuthLevel FROM cs_employees "
-                + "WHERE EmployeeID = ?";// and Password = ?";
-        try {
+        String query = "SELECT * FROM cs_employees "
+                + "WHERE EmployeeID = ? AND Password = ?";
+      try {
             ps = connection.prepareStatement(query);
             ps.setInt(1, verifyID);
-           // ps.setString(2, verifyPassword);
+            ps.setString(2, verifyPassword);
             rs = ps.executeQuery();
-            
+            Employee employee = null;
             if (rs.next()) {
-                authLevel = rs.getInt("AuthLevel");
+                    employee = new Employee();
+                    employee.setEmployeeID(rs.getInt("EmployeeID"));
+                    employee.setAuthLevel(rs.getInt("AuthLevel"));
+                    employee.setPayRate(rs.getDouble("PayRate"));
+                    employee.setFirstName(rs.getString("FirstName"));
+                    employee.setLastName(rs.getString("LastName"));
+                    employee.setStatus(rs.getBoolean("Status"));
             }
-            
-            return authLevel;
-        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Employee: " + employee.getFirstName());
+            return employee;
+        } catch (SQLException | NullPointerException e) {
             System.out.println(e);
-            return authLevel;
+            JOptionPane.showMessageDialog(null, "wrong ID or password");
+            return null;
         } finally {
             DBUtil.closeResultSet(rs);
             DBUtil.closePreparedStatement(ps);
             pool.freeConnection(connection);
         }
-    }
+   }
     
     // Delete 1 Employee using Employee ID
     public static int delete(Employee employee){

@@ -85,19 +85,29 @@ public class EmployeesServlet extends HttpServlet {
         else if (action.equals("verifyLogIn")) {           
             
             int employeeID = Integer.parseInt(request.getParameter("loginID"));
-           // int authLevel = Integer.parseInt(request.getParameter("authLevel"));
-            //String password = request.getParameter("password");
+            String password = request.getParameter("password");
             int authLevel = 0;
-            authLevel = EmployeeDB.verifyLogin(employeeID);//, password);
             
-            if(authLevel == 1){
-                url="/manager.jsp";
+            Employee verifyEmployee = new Employee();            
+            verifyEmployee = EmployeeDB.verifyLogin(employeeID, password);
+            
+            if(verifyEmployee != null)
+            {
+            authLevel = verifyEmployee.getAuthLevel();
             }
-            else if(authLevel == 2){
-                url="/employee.jsp";
+            else{
+                ;
             }
-            else if(authLevel == 0){
-               url="/login.jsp";
+            switch (authLevel) {
+                case 1:
+                    url="/manager.jsp";
+                    break;
+                case 2:
+                    url="/employee.jsp";
+                    break;
+                default:
+                    url="/login.jsp";
+                    break;
             }
 
         } 
