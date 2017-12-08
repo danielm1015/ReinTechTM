@@ -14,12 +14,11 @@
     </head>
     
     <body>
-            
             <div id="employeeFormPanel">
                 <form id="employeeForm" action="employee" method="POST">
                     <input type="hidden" name="action" value="update_employee"> 
                     <label class="pad_top">Employee ID:</label>
-                    <input type="text" name="employeeID" value="${employee.employeeID}" disabled="true"><br>
+                    <input type="text" name="employeeID" value="${employee.employeeID}"><br>
                     <label class="pad_top">First Name:</label>
                     <input type="text" name="firstName" value="${employee.firstName}"><br>
                     <label class="pad_top">Last Name:</label>

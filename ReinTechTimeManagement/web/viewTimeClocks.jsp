@@ -41,7 +41,6 @@
                         <th>Options</th>
                     </tr>
                     
-                    
                     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
                         <c:forEach var="timeClock" items="${timeClocks}">
                         <tr>

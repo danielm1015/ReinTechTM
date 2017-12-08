@@ -76,7 +76,6 @@ public class TimeClocksServlet extends HttpServlet {
         getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);
-        
     }
      
     @Override

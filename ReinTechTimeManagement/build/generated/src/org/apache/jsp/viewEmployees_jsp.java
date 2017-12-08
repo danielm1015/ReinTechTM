@@ -70,7 +70,7 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                    <label class=\"pad_top\">Employee ID:</label>\r\n");
       out.write("                    <input type=\"text\" name=\"employeeID\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.employeeID}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\" disabled=\"true\"><br>\r\n");
+      out.write("\"><br>\r\n");
       out.write("                    <label class=\"pad_top\">First Name:</label>\r\n");
       out.write("                    <input type=\"text\" name=\"firstName\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employee.firstName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
