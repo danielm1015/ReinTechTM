@@ -21,14 +21,6 @@
     	<url-pattern>/hour</url-pattern>
     </servlet-mapping>
     <servlet>
-    	<servlet-name>TimeClocksServlet</servlet-name>
-    	<servlet-class>employee.data.TimeClocksServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-    	<servlet-name>TimeClocksServlet</servlet-name>
-    	<url-pattern>/timeclock</url-pattern>
-    </servlet-mapping>
-    <servlet>
     	<servlet-name>EmployeePagesServlet</servlet-name>
     	<servlet-class>employee.data.EmployeePagesServlet</servlet-class>
     </servlet>

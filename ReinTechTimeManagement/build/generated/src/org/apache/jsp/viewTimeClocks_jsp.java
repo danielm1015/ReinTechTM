@@ -108,6 +108,7 @@ public final class viewTimeClocks_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\r\n");
       out.write("                    \r\n");
       out.write("                </table>\r\n");
+      out.write("                        <p><a href=\"timeclock\" action=\"display_timeClock\">Refresh</a></p>\r\n");
       out.write("            </div>\r\n");
       out.write("               \r\n");
       out.write("    </body>\r\n");
