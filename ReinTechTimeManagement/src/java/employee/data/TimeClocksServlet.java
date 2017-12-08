@@ -44,7 +44,7 @@ public class TimeClocksServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
 
-        String url = "/employee.jsp";
+        String url = "/viewTimeClocks.jsp";
         
         // get current action
         String action = request.getParameter("action");

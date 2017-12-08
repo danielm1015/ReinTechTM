@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta charset=UTF-8">
-        <!--<link rel="stylesheet" href="styles/viewEmployees.css" type="text/css"/>-->
+        <link rel="stylesheet" href="styles/viewEmployees.css" type="text/css"/>
         <title>View TimeClocks</title>
     </head>
     
@@ -56,6 +56,7 @@
                         </c:forEach>
                     
                 </table>
+                   <p><a href="timeclock">Refresh</a></p>
             </div>
                
     </body>

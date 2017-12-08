@@ -58,7 +58,7 @@ public final class viewTimeClocks_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta charset=UTF-8\">\r\n");
-      out.write("        <!--<link rel=\"stylesheet\" href=\"styles/viewEmployees.css\" type=\"text/css\"/>-->\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"styles/viewEmployees.css\" type=\"text/css\"/>\r\n");
       out.write("        <title>View TimeClocks</title>\r\n");
       out.write("    </head>\r\n");
       out.write("    \r\n");
@@ -108,6 +108,7 @@ public final class viewTimeClocks_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\r\n");
       out.write("                    \r\n");
       out.write("                </table>\r\n");
+      out.write("                   <p><a href=\"timeclock\">Refresh</a></p>\r\n");
       out.write("            </div>\r\n");
       out.write("               \r\n");
       out.write("    </body>\r\n");
