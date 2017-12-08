@@ -5,10 +5,8 @@
  */
 package employee.data;
 
-import java.time.Clock;
 import employee.main.TimeClock;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,23 +18,26 @@ import java.util.ArrayList;
  */
 public class TimeClockDB {
     
-    public static int updateStartTime(TimeClock timeClock){
+    public static int update(TimeClock timeClock){
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
 
         String query = "UPDATE cs_workhours SET "
-                + "StartTime = ?";
+                + "StartTime = ?, LunchOut = ?, "
+                + "LunchIn = ?, EndTime = ? "
+                + "WHERE EmployeeID = ?";
+        
         try {
-           ps = connection.prepareStatement(query);
-           ps.setString(1, timeClock.getStartTime());
- /*           ps.setString(2, employee.getLastName());
-            ps.setDouble(3, employee.getPayRate());
-            ps.setInt(4, employee.getAuthLevel());
-            ps.setBoolean(5, employee.getStatus());
-            ps.setInt(6, employee.getEmployeeID());
-*/
+            ps = connection.prepareStatement(query);
+            ps.setString(1, timeClock.getStartTime());
+            ps.setString(2, timeClock.getLunchOut());
+            ps.setString(3, timeClock.getLunchIn());
+            ps.setString(4, timeClock.getEndTime());
+            ps.setInt(5, timeClock.getEmployeeID());
+
             return ps.executeUpdate();
+            
         } catch (SQLException e) {
             System.out.println(e);
             return 0;
@@ -46,11 +47,6 @@ public class TimeClockDB {
         }
     }
     
- /*   public static TimeClock selectHour(int employeeID){
-        //TODO:COMPLETE METHOD
-        return null;
-    } */
-	
     public static ArrayList<TimeClock> selectTimeClocks(){
     ConnectionPool pool = ConnectionPool.getInstance();
     Connection connection = pool.getConnection();

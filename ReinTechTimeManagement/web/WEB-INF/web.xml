@@ -1,32 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	 version="3.1">
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>EmployeesServlet</servlet-name>
         <servlet-class>employee.data.EmployeesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TimeClocksServlet</servlet-name>
+        <servlet-class>employee.data.TimeClocksServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>EmployeesServlet</servlet-name>
         <url-pattern>/employee</url-pattern>
     </servlet-mapping>
     <servlet>
-    	<servlet-name>HoursServlet</servlet-name>
-    	<servlet-class>employee.data.HoursServlet</servlet-class>
+        <servlet-name>HoursServlet</servlet-name>
+        <servlet-class>employee.data.HoursServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-    	<servlet-name>HoursServlet</servlet-name>
-    	<url-pattern>/hour</url-pattern>
+        <servlet-name>HoursServlet</servlet-name>
+        <url-pattern>/hour</url-pattern>
     </servlet-mapping>
-    <servlet>
-    	<servlet-name>TimeClocksServlet</servlet-name>
-    	<servlet-class>employee.data.TimeClocksServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
-    	<servlet-name>TimeClocksServlet</servlet-name>
-    	<url-pattern>/timeclock</url-pattern>
+        <servlet-name>TimeClocksServlet</servlet-name>
+        <url-pattern>/timeclock</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
