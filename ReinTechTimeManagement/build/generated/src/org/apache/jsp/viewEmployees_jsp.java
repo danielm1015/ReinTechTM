@@ -63,7 +63,6 @@ public final class viewEmployees_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    </head>\r\n");
       out.write("    \r\n");
       out.write("    <body>\r\n");
-      out.write("            \r\n");
       out.write("            <div id=\"employeeFormPanel\">\r\n");
       out.write("                <form id=\"employeeForm\" action=\"employee\" method=\"POST\">\r\n");
       out.write("                    <input type=\"hidden\" name=\"action\" value=\"update_employee\"> \r\n");
