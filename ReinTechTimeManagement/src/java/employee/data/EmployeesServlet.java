@@ -102,6 +102,17 @@ public class EmployeesServlet extends HttpServlet {
 
         } 
 
+          else if (action.equals("changePassword")) {
+            // get parameters from the request
+            String password = request.getParameter("password");
+
+            // get and update user
+            Employee employee = (Employee) session.getAttribute("employee"); 
+            employee.setPassword(password);
+            EmployeeDB.update(employee);
+            
+        }
+        
         else if (action.equals("delete_employee")) {
             // get the user
             int employeeID = Integer.parseInt(request.getParameter("employeeID"));

@@ -235,6 +235,28 @@ public class EmployeeDB {
         }
                 
     }
+    
+     public static int changePassword(Employee employee){
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection connection = pool.getConnection();
+        PreparedStatement ps = null;
+
+        String query = "UPDATE cs_employees SET "
+                + "Password = ? "
+                + "WHERE employeeID = ?";
+        try {
+           ps = connection.prepareStatement(query);
+            ps.setString(1, employee.getPassword());
+
+            return ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+            return 0;
+        } finally {
+            DBUtil.closePreparedStatement(ps);
+            pool.freeConnection(connection);
+        }
+    }
 }
 
 
