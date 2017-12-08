@@ -71,6 +71,28 @@ public class TimeClocksServlet extends HttpServlet {
             // get list of users
             ArrayList<TimeClock> timeClock = TimeClockDB.selectTimeClocks();            
             request.setAttribute("timeClock", timeClock);
+        } 
+        
+        else if (action.equals("update_timeClock")) {
+            // get parameters from the request
+            int employeeID = Integer.parseInt(request.getParameter("employeeID"));
+            String clockIn = request.getParameter("clockIn");
+            String lunchOut = request.getParameter("lunchOut");
+            String lunchIn = request.getParameter("lunchIn");
+            String clockOut = request.getParameter("clockOut");
+
+            // get and update user
+            TimeClock timeClock = (TimeClock) session.getAttribute("employee"); 
+            timeClock.setEmployeeID(employeeID);
+            timeClock.setStartTime(clockIn);
+            timeClock.setLunchOut(lunchOut);
+            timeClock.setLunchIn(lunchIn);
+            timeClock.setEndTime(clockOut);
+            TimeClockDB.updateTimeClock(timeClock);
+
+            // get and set updated users
+            ArrayList<TimeClock> timeClocks = TimeClockDB.selectTimeClocks();            
+            request.setAttribute("timeClocks", timeClocks);            
         }
         
         getServletContext()
