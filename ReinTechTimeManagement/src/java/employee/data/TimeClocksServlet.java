@@ -5,17 +5,26 @@
  */
 package employee.data;
 
+import employee.main.TimeClock;
+import employee.main.Employee;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Admin
  */
+@WebServlet(name = "TimeClockServlet", urlPatterns = {"/timeclock"})
+
 public class TimeClocksServlet extends HttpServlet {
 
     /**
@@ -27,60 +36,74 @@ public class TimeClocksServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+ 
+    @Override
+    protected void doPost(HttpServletRequest request,
+            HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet TimeClocksServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet TimeClocksServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        
+        HttpSession session = request.getSession();
+
+        String url = "/employee.jsp";
+        
+        // get current action
+        String action = request.getParameter("action");
+        
+        TimeClock tc = (TimeClock) session.getAttribute("day");
+        
+        if (action == "clockIn") {
+            if (tc.getStartTime()==""){
+                tc.setStartTime(LocalTime.now().toString());
+            } else if (tc.getLunchIn()==""){
+                tc.setLunchIn(LocalTime.now().toString());
+            } else
+                JOptionPane.showMessageDialog(null, "Please Clock Out.");
+        } else if (action == "clockOut") {
+            if (tc.getLunchOut()==""){
+                tc.setLunchOut(LocalTime.now().toString());
+            } else if (tc.getEndTime()==""){
+                tc.setEndTime(LocalTime.now().toString());
+            } else
+                JOptionPane.showMessageDialog(null, "Please Clock In.");
         }
-    }
+        
+        if (action.equals("display_timeClock")) {            
+            // get list of users
+            ArrayList<TimeClock> timeClock = TimeClockDB.selectTimeClocks();            
+            request.setAttribute("timeClock", timeClock);
+        } 
+        
+        else if (action.equals("update_timeClock")) {
+            // get parameters from the request
+            int employeeID = Integer.parseInt(request.getParameter("employeeID"));
+            String clockIn = request.getParameter("clockIn");
+            String lunchOut = request.getParameter("lunchOut");
+            String lunchIn = request.getParameter("lunchIn");
+            String clockOut = request.getParameter("clockOut");
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+            // get and update user
+            TimeClock timeClock = (TimeClock) session.getAttribute("employee"); 
+            timeClock.setEmployeeID(employeeID);
+            timeClock.setStartTime(clockIn);
+            timeClock.setLunchOut(lunchOut);
+            timeClock.setLunchIn(lunchIn);
+            timeClock.setEndTime(clockOut);
+            TimeClockDB.updateTimeClock(timeClock);
+
+            // get and set updated users
+            ArrayList<TimeClock> timeClocks = TimeClockDB.selectTimeClocks();            
+            request.setAttribute("timeClocks", timeClocks);            
+        }
+        
+        getServletContext()
+                .getRequestDispatcher(url)
+                .forward(request, response);
+    }
+     
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        doPost(request, response);
     }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }
